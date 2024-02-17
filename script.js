@@ -25,3 +25,24 @@ function playRound(playerSelection, computerSelection) {
         return "You Lose! Rock beats Scissors"
     }
 }
+
+// 玩家和电脑的分数
+let playerScore = 0;
+let computerScore = 0;
+
+// 玩多局游戏并计算分数
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        let playerChoice = prompt("Input Rock, Scissors or Paper");
+        console.log(playRound(playerChoice, getComputerChoice()));
+        console.log(`Score: Player ${playerScore} : Computer ${computerScore}`);
+    }
+    console.log("Game over");
+    if (playerScore > computerScore) {
+        console.log("Player Win!")
+    } else if (playerScore < computerScore) {
+        console.log("Computer Win!")
+    } else {
+        console.log("Tie!")
+    }
+}
