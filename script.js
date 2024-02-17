@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     // 随机功能没做，电脑固定出 Rock
     return "Rock";
@@ -12,23 +15,25 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return "Tie!";
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
+        playerScore++;
         return "You Win! Rock beats Scissors";
     } else if (playerSelection == "rock" && computerSelection == "paper") {
+        computerScore++;
         return "You Lose! Paper beats Rock";
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
+        computerScore++;
         return "You Lose! Scissors beat Paper"
     } else if (playerSelection == "paper" && computerSelection == "rock") {
+        playerScore++;
         return "You Win! Paper beats Rock";
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        playerScore++;
         return "You Win! Scissors beat Paper";
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
+        computerScore++;
         return "You Lose! Rock beats Scissors"
     }
 }
-
-// 玩家和电脑的分数
-let playerScore = 0;
-let computerScore = 0;
 
 // 玩多局游戏并计算分数
 function playGame() {
